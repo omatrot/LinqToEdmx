@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -36,7 +36,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((ResultBindingField == null))
         {
-          ResultBindingField = new XTypedList<ResultBinding>(this, LinqToXsdTypeManager.Instance, XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          ResultBindingField = new XTypedList<ResultBinding>(this, LinqToXsdTypeManager.Instance, XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return ResultBindingField;
       }
@@ -50,7 +50,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((ResultBindingField == null))
           {
-            ResultBindingField = XTypedList<ResultBinding>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            ResultBindingField = XTypedList<ResultBinding>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -74,7 +74,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TEntityTypeModificationFunctionWithResult", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TEntityTypeModificationFunctionWithResult", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -113,10 +113,10 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingScalarProperty));
-      LocalElementDictionary.Add(XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingAssociationEnd));
-      LocalElementDictionary.Add(XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingComplexProperty));
-      LocalElementDictionary.Add(XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (ResultBinding));
+      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingScalarProperty));
+      LocalElementDictionary.Add(XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingAssociationEnd));
+      LocalElementDictionary.Add(XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingComplexProperty));
+      LocalElementDictionary.Add(XName.Get("ResultBinding", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (ResultBinding));
     }
   }
 }

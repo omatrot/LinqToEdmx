@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Linq;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   public class XRootNamespace
   {

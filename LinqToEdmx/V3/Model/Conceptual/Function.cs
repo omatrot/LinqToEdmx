@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV3
 {
   /// <summary>
   /// <para>
@@ -42,12 +42,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((Documentation) (x));
       }
       set
       {
-        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -68,7 +68,7 @@ namespace LinqToEdmx.Model.ConceptualV2
       {
         if ((_parameterField == null))
         {
-          _parameterField = new XTypedList<FunctionParameter>(this, LinqToXsdTypeManager.Instance, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"));
+          _parameterField = new XTypedList<FunctionParameter>(this, LinqToXsdTypeManager.Instance, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"));
         }
         return _parameterField;
       }
@@ -82,7 +82,7 @@ namespace LinqToEdmx.Model.ConceptualV2
         {
           if ((_parameterField == null))
           {
-            _parameterField = XTypedList<FunctionParameter>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"));
+            _parameterField = XTypedList<FunctionParameter>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"));
           }
           else
           {
@@ -109,7 +109,7 @@ namespace LinqToEdmx.Model.ConceptualV2
       {
         if ((_definingExpressionField == null))
         {
-          _definingExpressionField = new XSimpleList<string>(this, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype, XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"));
+          _definingExpressionField = new XSimpleList<string>(this, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype, XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"));
         }
         return _definingExpressionField;
       }
@@ -123,7 +123,7 @@ namespace LinqToEdmx.Model.ConceptualV2
         {
           if ((_definingExpressionField == null))
           {
-            _definingExpressionField = XSimpleList<string>.Initialize(this, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype, value, XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"));
+            _definingExpressionField = XSimpleList<string>.Initialize(this, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype, value, XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"));
           }
           else
           {
@@ -150,7 +150,7 @@ namespace LinqToEdmx.Model.ConceptualV2
       {
         if ((_returnTypeField == null))
         {
-          _returnTypeField = new XTypedList<FunctionReturnType>(this, LinqToXsdTypeManager.Instance, XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"));
+          _returnTypeField = new XTypedList<FunctionReturnType>(this, LinqToXsdTypeManager.Instance, XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"));
         }
         return _returnTypeField;
       }
@@ -164,7 +164,7 @@ namespace LinqToEdmx.Model.ConceptualV2
         {
           if ((_returnTypeField == null))
           {
-            _returnTypeField = XTypedList<FunctionReturnType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"));
+            _returnTypeField = XTypedList<FunctionReturnType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"));
           }
           else
           {
@@ -401,7 +401,7 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        return XName.Get("TFunction", "http://schemas.microsoft.com/ado/2008/09/edm");
+        return XName.Get("TFunction", "http://schemas.microsoft.com/ado/2009/11/edm");
       }
     }
 
@@ -440,19 +440,19 @@ namespace LinqToEdmx.Model.ConceptualV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Documentation));
-      LocalElementDictionary.Add(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (FunctionParameter));
-      LocalElementDictionary.Add(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (string));
-      LocalElementDictionary.Add(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (FunctionReturnType));
+      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (Documentation));
+      LocalElementDictionary.Add(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (FunctionParameter));
+      LocalElementDictionary.Add(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (string));
+      LocalElementDictionary.Add(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (FunctionReturnType));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 9)));
-      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 9)));
-      transitions.Add(9, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 3)));
-      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 9)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 9)));
+      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 9)));
+      transitions.Add(9, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 3)));
+      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("DefiningExpression", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(XName.Get("ReturnType", "http://schemas.microsoft.com/ado/2009/11/edm"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 9)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 3, 9

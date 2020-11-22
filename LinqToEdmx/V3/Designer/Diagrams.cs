@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -22,7 +22,7 @@ namespace LinqToEdmx.DesignerV2
     static Diagrams()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Diagram", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Diagram", "http://schemas.microsoft.com/ado/2009/11/edmx")));
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ namespace LinqToEdmx.DesignerV2
       {
         if ((_diagramField == null))
         {
-          _diagramField = new XTypedList<Diagram>(this, LinqToXsdTypeManager.Instance, XName.Get("Diagram", "http://schemas.microsoft.com/ado/2008/10/edmx"));
+          _diagramField = new XTypedList<Diagram>(this, LinqToXsdTypeManager.Instance, XName.Get("Diagram", "http://schemas.microsoft.com/ado/2009/11/edmx"));
         }
         return _diagramField;
       }
@@ -53,7 +53,7 @@ namespace LinqToEdmx.DesignerV2
         {
           if ((_diagramField == null))
           {
-            _diagramField = XTypedList<Diagram>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Diagram", "http://schemas.microsoft.com/ado/2008/10/edmx"));
+            _diagramField = XTypedList<Diagram>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Diagram", "http://schemas.microsoft.com/ado/2009/11/edmx"));
           }
           else
           {
@@ -77,7 +77,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TDiagrams", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TDiagrams", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -116,7 +116,7 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Diagram", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Diagram));
+      LocalElementDictionary.Add(XName.Get("Diagram", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (Diagram));
     }
   }
 }

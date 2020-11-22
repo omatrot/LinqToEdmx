@@ -1,9 +1,9 @@
 ﻿using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   public class DesignerProperty : XTypedElement, IXMetaData
   {
@@ -47,7 +47,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TDesignerProperty", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TDesignerProperty", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -20,7 +20,7 @@ namespace LinqToEdmx.DesignerV2
     static StorageModels()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl")));
     }
 
     /// <summary>
@@ -35,11 +35,11 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return ((StorageSchema) GetElement(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl")));
+        return ((StorageSchema) GetElement(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl")));
       }
       set
       {
-        SetElement(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -57,7 +57,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TRuntimeStorageModels", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TRuntimeStorageModels", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -96,7 +96,7 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (StorageSchema));
+      LocalElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (StorageSchema));
     }
   }
 }

@@ -1,9 +1,9 @@
 ﻿using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   public class FunctionMappingScalarProperty : XTypedElement, IXMetaData
   {
@@ -64,7 +64,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TFunctionMappingScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TFunctionMappingScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 

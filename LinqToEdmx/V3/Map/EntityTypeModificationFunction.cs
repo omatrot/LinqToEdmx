@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -44,7 +44,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((ScalarPropertyField == null))
         {
-          ScalarPropertyField = new XTypedList<FunctionMappingScalarProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          ScalarPropertyField = new XTypedList<FunctionMappingScalarProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return ScalarPropertyField;
       }
@@ -58,7 +58,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((ScalarPropertyField == null))
           {
-            ScalarPropertyField = XTypedList<FunctionMappingScalarProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            ScalarPropertyField = XTypedList<FunctionMappingScalarProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -85,7 +85,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((AssociationEndField == null))
         {
-          AssociationEndField = new XTypedList<FunctionMappingAssociationEnd>(this, LinqToXsdTypeManager.Instance, XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          AssociationEndField = new XTypedList<FunctionMappingAssociationEnd>(this, LinqToXsdTypeManager.Instance, XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return AssociationEndField;
       }
@@ -99,7 +99,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((AssociationEndField == null))
           {
-            AssociationEndField = XTypedList<FunctionMappingAssociationEnd>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            AssociationEndField = XTypedList<FunctionMappingAssociationEnd>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -126,7 +126,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((ComplexPropertyField == null))
         {
-          ComplexPropertyField = new XTypedList<FunctionMappingComplexProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          ComplexPropertyField = new XTypedList<FunctionMappingComplexProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return ComplexPropertyField;
       }
@@ -140,7 +140,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((ComplexPropertyField == null))
           {
-            ComplexPropertyField = XTypedList<FunctionMappingComplexProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            ComplexPropertyField = XTypedList<FunctionMappingComplexProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -198,7 +198,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TEntityTypeModificationFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TEntityTypeModificationFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -237,9 +237,9 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingScalarProperty));
-      LocalElementDictionary.Add(XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingAssociationEnd));
-      LocalElementDictionary.Add(XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingComplexProperty));
+      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingScalarProperty));
+      LocalElementDictionary.Add(XName.Get("AssociationEnd", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingAssociationEnd));
+      LocalElementDictionary.Add(XName.Get("ComplexProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingComplexProperty));
     }
   }
 }

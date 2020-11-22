@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -40,7 +40,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((_endPropertyField == null))
         {
-          _endPropertyField = new XTypedList<FunctionMappingEndProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          _endPropertyField = new XTypedList<FunctionMappingEndProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return _endPropertyField;
       }
@@ -54,7 +54,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((_endPropertyField == null))
           {
-            _endPropertyField = XTypedList<FunctionMappingEndProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            _endPropertyField = XTypedList<FunctionMappingEndProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -112,7 +112,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TAssociationSetModificationFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TAssociationSetModificationFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -151,7 +151,7 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionMappingEndProperty));
+      LocalElementDictionary.Add(XName.Get("EndProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionMappingEndProperty));
     }
   }
 }

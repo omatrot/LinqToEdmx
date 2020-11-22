@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -24,7 +24,7 @@ namespace LinqToEdmx.MapV2
     static FunctionImportMappingResultMapping()
     {
       BuildElementDictionary();
-      ContentModel = new ChoiceContentModelEntity(new NamedContentModelEntity(XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")), new NamedContentModelEntity(XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+      ContentModel = new ChoiceContentModelEntity(new NamedContentModelEntity(XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")), new NamedContentModelEntity(XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
     }
 
     /// <summary>
@@ -38,12 +38,12 @@ namespace LinqToEdmx.MapV2
 
     public FunctionImportMappingResultMapping(IEnumerable<FunctionImportEntityTypeMapping> entityTypeMapping)
     {
-      _entityTypeMappingField = XTypedList<FunctionImportEntityTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, entityTypeMapping, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+      _entityTypeMappingField = XTypedList<FunctionImportEntityTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, entityTypeMapping, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
     }
 
     public FunctionImportMappingResultMapping(IEnumerable<FunctionImportComplexTypeMapping> complexTypeMapping)
     {
-      _complexTypeMappingField = XTypedList<FunctionImportComplexTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, complexTypeMapping, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+      _complexTypeMappingField = XTypedList<FunctionImportComplexTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, complexTypeMapping, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((_entityTypeMappingField == null))
         {
-          _entityTypeMappingField = new XTypedList<FunctionImportEntityTypeMapping>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          _entityTypeMappingField = new XTypedList<FunctionImportEntityTypeMapping>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return _entityTypeMappingField;
       }
@@ -74,7 +74,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((_entityTypeMappingField == null))
           {
-            _entityTypeMappingField = XTypedList<FunctionImportEntityTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            _entityTypeMappingField = XTypedList<FunctionImportEntityTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -98,7 +98,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((_complexTypeMappingField == null))
         {
-          _complexTypeMappingField = new XTypedList<FunctionImportComplexTypeMapping>(this, LinqToXsdTypeManager.Instance, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          _complexTypeMappingField = new XTypedList<FunctionImportComplexTypeMapping>(this, LinqToXsdTypeManager.Instance, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return _complexTypeMappingField;
       }
@@ -112,7 +112,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((_complexTypeMappingField == null))
           {
-            _complexTypeMappingField = XTypedList<FunctionImportComplexTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            _complexTypeMappingField = XTypedList<FunctionImportComplexTypeMapping>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -136,7 +136,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TFunctionImportMappingResultMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TFunctionImportMappingResultMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -175,8 +175,8 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionImportEntityTypeMapping));
-      LocalElementDictionary.Add(XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionImportComplexTypeMapping));
+      LocalElementDictionary.Add(XName.Get("EntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionImportEntityTypeMapping));
+      LocalElementDictionary.Add(XName.Get("ComplexTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionImportComplexTypeMapping));
     }
   }
 }

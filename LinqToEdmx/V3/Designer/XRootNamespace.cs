@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   public class XRootNamespace
   {
@@ -16,17 +16,17 @@ namespace LinqToEdmx.DesignerV2
     {
     }
 
-    public XRootNamespace(EdmxV2 root)
+    public XRootNamespace(EdmxV3 root)
     {
       _doc = new XDocument(root.Untyped);
       _rootObject = root;
     }
 
-    public EdmxV2 Edmx
+    public EdmxV3 Edmx
     {
       get
       {
-        return _rootObject as EdmxV2;
+        return _rootObject as EdmxV3;
       }
     }
 

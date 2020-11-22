@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -23,7 +23,7 @@ namespace LinqToEdmx.DesignerV2
     static InheritanceConnector()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2009/11/edmx")));
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace LinqToEdmx.DesignerV2
       {
         if ((_connectorPointField == null))
         {
-          _connectorPointField = new XTypedList<ConnectorPoint>(this, LinqToXsdTypeManager.Instance, XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2008/10/edmx"));
+          _connectorPointField = new XTypedList<ConnectorPoint>(this, LinqToXsdTypeManager.Instance, XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2009/11/edmx"));
         }
         return _connectorPointField;
       }
@@ -54,7 +54,7 @@ namespace LinqToEdmx.DesignerV2
         {
           if ((_connectorPointField == null))
           {
-            _connectorPointField = XTypedList<ConnectorPoint>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2008/10/edmx"));
+            _connectorPointField = XTypedList<ConnectorPoint>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2009/11/edmx"));
           }
           else
           {
@@ -116,7 +116,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TInheritanceConnector", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TInheritanceConnector", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -155,7 +155,7 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (ConnectorPoint));
+      LocalElementDictionary.Add(XName.Get("ConnectorPoint", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (ConnectorPoint));
     }
   }
 }

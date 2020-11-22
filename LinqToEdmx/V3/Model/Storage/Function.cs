@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   /// <summary>
   /// <para>
@@ -42,12 +42,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return ((Documentation) (x));
       }
       set
       {
-        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -63,12 +63,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return XTypedServices.ParseValue<string>(x, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype);
       }
       set
       {
-        SetElementWithValidation(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value, "CommandText", StorageV2.CommandText.TypeDefinition);
+        SetElementWithValidation(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value, "CommandText", StorageV3.CommandText.TypeDefinition);
       }
     }
 
@@ -86,7 +86,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_parameterField == null))
         {
-          _parameterField = new XTypedList<Parameter>(this, LinqToXsdTypeManager.Instance, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _parameterField = new XTypedList<Parameter>(this, LinqToXsdTypeManager.Instance, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _parameterField;
       }
@@ -100,7 +100,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_parameterField == null))
           {
-            _parameterField = XTypedList<Parameter>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _parameterField = XTypedList<Parameter>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -347,7 +347,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("TFunction", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("TFunction", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 
@@ -386,19 +386,19 @@ namespace LinqToEdmx.Model.StorageV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
-      LocalElementDictionary.Add(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (string));
-      LocalElementDictionary.Add(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Parameter));
+      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
+      LocalElementDictionary.Add(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (string));
+      LocalElementDictionary.Add(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Parameter));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(4, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(5, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4), new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(4, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(5, new Transitions(new SingleTransition(XName.Get("Parameter", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 4, 5, 7

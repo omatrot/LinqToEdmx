@@ -1,10 +1,10 @@
 ﻿using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.MapV2;
+using LinqToEdmx.MapV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   public class XRoot
   {
@@ -28,19 +28,19 @@ namespace LinqToEdmx.Model.StorageV2
       _rootObject = root;
     }
 
-    public XRoot(ConceptualV2.EntityContainer root)
+    public XRoot(ConceptualV3.EntityContainer root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
     }
 
-    public XRoot(ConceptualV2.ConceptualSchema root)
+    public XRoot(ConceptualV3.ConceptualSchema root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
     }
 
-    public XRoot(EdmxV2 root)
+    public XRoot(EdmxV3 root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
@@ -68,27 +68,27 @@ namespace LinqToEdmx.Model.StorageV2
       }
     }
 
-    public ConceptualV2.EntityContainer EntityContainer1
+    public ConceptualV3.EntityContainer EntityContainer1
     {
       get
       {
-        return _rootObject as ConceptualV2.EntityContainer;
+        return _rootObject as ConceptualV3.EntityContainer;
       }
     }
 
-    public ConceptualV2.ConceptualSchema Schema1
+    public ConceptualV3.ConceptualSchema Schema1
     {
       get
       {
-        return _rootObject as ConceptualV2.ConceptualSchema;
+        return _rootObject as ConceptualV3.ConceptualSchema;
       }
     }
 
-    public EdmxV2 Edmx
+    public EdmxV3 Edmx
     {
       get
       {
-        return _rootObject as EdmxV2;
+        return _rootObject as EdmxV3;
       }
     }
 

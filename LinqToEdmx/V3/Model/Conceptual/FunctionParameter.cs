@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV3
 {
   /// <summary>
   /// <para>
@@ -39,12 +39,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((TCollectionType) (x));
       }
       set
       {
-        SetElement(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -63,12 +63,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((ReferenceType) (x));
       }
       set
       {
-        SetElement(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -87,12 +87,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("RowType", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("RowType", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((RowType) (x));
       }
       set
       {
-        SetElement(XName.Get("RowType", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("RowType", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -323,7 +323,7 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        return XName.Get("TFunctionParameter", "http://schemas.microsoft.com/ado/2008/09/edm");
+        return XName.Get("TFunctionParameter", "http://schemas.microsoft.com/ado/2009/11/edm");
       }
     }
 
@@ -362,19 +362,19 @@ namespace LinqToEdmx.Model.ConceptualV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (TCollectionType));
-      LocalElementDictionary.Add(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ReferenceType));
-      LocalElementDictionary.Add(XName.Get("RowType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (RowType));
+      LocalElementDictionary.Add(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (TCollectionType));
+      LocalElementDictionary.Add(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (ReferenceType));
+      LocalElementDictionary.Add(XName.Get("RowType", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (RowType));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2008/09/edm"), 4), new SingleTransition(XName.Get("RowType", "http://schemas.microsoft.com/ado/2008/09/edm"), 6), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 7)));
-      transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 2)));
-      transitions.Add(4, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 4)));
-      transitions.Add(6, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 6)));
-      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 7)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("CollectionType", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(XName.Get("ReferenceType", "http://schemas.microsoft.com/ado/2009/11/edm"), 4), new SingleTransition(XName.Get("RowType", "http://schemas.microsoft.com/ado/2009/11/edm"), 6), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 7)));
+      transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 2)));
+      transitions.Add(4, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 4)));
+      transitions.Add(6, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 6)));
+      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 7)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 4, 6, 7

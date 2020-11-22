@@ -1,7 +1,7 @@
 ﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   public static class Version
   {

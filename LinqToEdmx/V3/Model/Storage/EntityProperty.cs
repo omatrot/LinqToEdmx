@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   /// <summary>
   /// <para>
@@ -41,12 +41,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return ((Documentation) (x));
       }
       set
       {
-        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -291,7 +291,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("TEntityProperty", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("TEntityProperty", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 
@@ -330,15 +330,15 @@ namespace LinqToEdmx.Model.StorageV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
+      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3)));
-      transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2)));
-      transitions.Add(3, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3)));
+      transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2)));
+      transitions.Add(3, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 3

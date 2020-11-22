@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -39,7 +39,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((ScalarPropertyField == null))
         {
-          ScalarPropertyField = new XTypedList<ScalarProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          ScalarPropertyField = new XTypedList<ScalarProperty>(this, LinqToXsdTypeManager.Instance, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return ScalarPropertyField;
       }
@@ -53,7 +53,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((ScalarPropertyField == null))
           {
-            ScalarPropertyField = XTypedList<ScalarProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            ScalarPropertyField = XTypedList<ScalarProperty>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -77,7 +77,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((ConditionField == null))
         {
-          ConditionField = new XTypedList<FunctionImportCondition>(this, LinqToXsdTypeManager.Instance, XName.Get("Condition", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          ConditionField = new XTypedList<FunctionImportCondition>(this, LinqToXsdTypeManager.Instance, XName.Get("Condition", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return ConditionField;
       }
@@ -91,7 +91,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((ConditionField == null))
           {
-            ConditionField = XTypedList<FunctionImportCondition>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Condition", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            ConditionField = XTypedList<FunctionImportCondition>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Condition", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -132,7 +132,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TFunctionImportEntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TFunctionImportEntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -171,8 +171,8 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (ScalarProperty));
-      LocalElementDictionary.Add(XName.Get("Condition", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionImportCondition));
+      LocalElementDictionary.Add(XName.Get("ScalarProperty", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (ScalarProperty));
+      LocalElementDictionary.Add(XName.Get("Condition", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionImportCondition));
     }
   }
 }

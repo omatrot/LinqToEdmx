@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -23,7 +23,7 @@ namespace LinqToEdmx.MapV2
     static EntityTypeMapping()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")), new NamedContentModelEntity(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")), new NamedContentModelEntity(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace LinqToEdmx.MapV2
       {
         if ((MappingFragmentField == null))
         {
-          MappingFragmentField = new XTypedList<MappingFragment>(this, LinqToXsdTypeManager.Instance, XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+          MappingFragmentField = new XTypedList<MappingFragment>(this, LinqToXsdTypeManager.Instance, XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
         }
         return MappingFragmentField;
       }
@@ -54,7 +54,7 @@ namespace LinqToEdmx.MapV2
         {
           if ((MappingFragmentField == null))
           {
-            MappingFragmentField = XTypedList<MappingFragment>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"));
+            MappingFragmentField = XTypedList<MappingFragment>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"));
           }
           else
           {
@@ -76,11 +76,11 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return ((EntityTypeModificationFunctionMapping) GetElement(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+        return ((EntityTypeModificationFunctionMapping) GetElement(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
       }
       set
       {
-        SetElement(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), value);
+        SetElement(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), value);
       }
     }
 
@@ -115,7 +115,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TEntityTypeMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TEntityTypeMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -154,8 +154,8 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (MappingFragment));
-      LocalElementDictionary.Add(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (EntityTypeModificationFunctionMapping));
+      LocalElementDictionary.Add(XName.Get("MappingFragment", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (MappingFragment));
+      LocalElementDictionary.Add(XName.Get("ModificationFunctionMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (EntityTypeModificationFunctionMapping));
     }
   }
 }

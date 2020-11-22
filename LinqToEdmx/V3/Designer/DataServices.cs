@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.ConceptualV2;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.ConceptualV3;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -23,7 +23,7 @@ namespace LinqToEdmx.DesignerV2
     static DataServices()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm")));
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ namespace LinqToEdmx.DesignerV2
       {
         if ((_schemaField == null))
         {
-          _schemaField = new XTypedList<ConceptualSchema>(this, LinqToXsdTypeManager.Instance, XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm"));
+          _schemaField = new XTypedList<ConceptualSchema>(this, LinqToXsdTypeManager.Instance, XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm"));
         }
         return _schemaField;
       }
@@ -54,7 +54,7 @@ namespace LinqToEdmx.DesignerV2
         {
           if ((_schemaField == null))
           {
-            _schemaField = XTypedList<ConceptualSchema>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm"));
+            _schemaField = XTypedList<ConceptualSchema>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm"));
           }
           else
           {
@@ -78,7 +78,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TDataServices", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TDataServices", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -117,7 +117,7 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualSchema));
+      LocalElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (ConceptualSchema));
     }
   }
 }

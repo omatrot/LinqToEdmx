@@ -6,7 +6,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   /// <summary>
   /// <para>
@@ -41,12 +41,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return ((Documentation) (x));
       }
       set
       {
-        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -67,7 +67,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_entitySetField == null))
         {
-          _entitySetField = new XTypedList<EntitySetLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _entitySetField = new XTypedList<EntitySetLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _entitySetField;
       }
@@ -81,7 +81,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_entitySetField == null))
           {
-            _entitySetField = XTypedList<EntitySetLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _entitySetField = XTypedList<EntitySetLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -108,7 +108,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_associationSetField == null))
         {
-          _associationSetField = new XTypedList<AssociationSetLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _associationSetField = new XTypedList<AssociationSetLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _associationSetField;
       }
@@ -122,7 +122,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_associationSetField == null))
           {
-            _associationSetField = XTypedList<AssociationSetLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _associationSetField = XTypedList<AssociationSetLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -177,7 +177,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 
@@ -241,18 +241,18 @@ namespace LinqToEdmx.Model.StorageV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
-      LocalElementDictionary.Add(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EntitySetLocalType));
-      LocalElementDictionary.Add(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (AssociationSetLocalType));
+      LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
+      LocalElementDictionary.Add(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (EntitySetLocalType));
+      LocalElementDictionary.Add(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (AssociationSetLocalType));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
-      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(7, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
+      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 3, 7
@@ -292,12 +292,12 @@ namespace LinqToEdmx.Model.StorageV2
       {
         get
         {
-          var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           return ((Documentation) (x));
         }
         set
         {
-          SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+          SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
         }
       }
 
@@ -315,7 +315,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((EndField == null))
           {
-            EndField = new XTypedList<EndLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            EndField = new XTypedList<EndLocalType>(this, LinqToXsdTypeManager.Instance, XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           return EndField;
         }
@@ -329,7 +329,7 @@ namespace LinqToEdmx.Model.StorageV2
           {
             if ((EndField == null))
             {
-              EndField = XTypedList<EndLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+              EndField = XTypedList<EndLocalType>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
             }
             else
             {
@@ -402,7 +402,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         get
         {
-          return XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+          return XName.Get("AssociationSet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
         }
       }
 
@@ -441,17 +441,17 @@ namespace LinqToEdmx.Model.StorageV2
 
       private static void BuildElementDictionary()
       {
-        LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
-        LocalElementDictionary.Add(XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EndLocalType));
+        LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
+        LocalElementDictionary.Add(XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (EndLocalType));
       }
 
       private static void InitFsm()
       {
         var transitions = new Dictionary<int, Transitions>();
-        transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
-        transitions.Add(2, new Transitions(new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
-        transitions.Add(5, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
-        transitions.Add(3, new Transitions(new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
+        transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
+        transitions.Add(2, new Transitions(new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
+        transitions.Add(5, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
+        transitions.Add(3, new Transitions(new SingleTransition(XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
         _validationStates = new FSM(1, new Set<int>(new[]
                                                      {
                                                        2, 1, 3, 5
@@ -492,12 +492,12 @@ namespace LinqToEdmx.Model.StorageV2
         {
           get
           {
-            var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
             return ((Documentation) (x));
           }
           set
           {
-            SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+            SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
           }
         }
 
@@ -564,7 +564,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           get
           {
-            return XName.Get("End", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+            return XName.Get("End", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
           }
         }
 
@@ -603,15 +603,15 @@ namespace LinqToEdmx.Model.StorageV2
 
         private static void BuildElementDictionary()
         {
-          LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
+          LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
         }
 
         private static void InitFsm()
         {
           var transitions = new Dictionary<int, Transitions>();
-          transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3)));
-          transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2)));
-          transitions.Add(3, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3)));
+          transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3)));
+          transitions.Add(2, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2)));
+          transitions.Add(3, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3)));
           _validationStates = new FSM(1, new Set<int>(new[]
                                                        {
                                                          2, 1, 3
@@ -655,12 +655,12 @@ namespace LinqToEdmx.Model.StorageV2
       {
         get
         {
-          var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          var x = GetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           return ((Documentation) (x));
         }
         set
         {
-          SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+          SetElement(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
         }
       }
 
@@ -676,12 +676,12 @@ namespace LinqToEdmx.Model.StorageV2
       {
         get
         {
-          var x = GetElement(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          var x = GetElement(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           return XTypedServices.ParseValue<string>(x, XmlSchemaType.GetBuiltInSimpleType(XmlTypeCode.String).Datatype);
         }
         set
         {
-          SetElementWithValidation(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value, "DefiningQuery", CommandText.TypeDefinition);
+          SetElementWithValidation(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value, "DefiningQuery", CommandText.TypeDefinition);
         }
       }
 
@@ -838,7 +838,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         get
         {
-          return XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+          return XName.Get("EntitySet", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
         }
       }
 
@@ -877,17 +877,17 @@ namespace LinqToEdmx.Model.StorageV2
 
       private static void BuildElementDictionary()
       {
-        LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Documentation));
-        LocalElementDictionary.Add(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (string));
+        LocalElementDictionary.Add(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Documentation));
+        LocalElementDictionary.Add(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (string));
       }
 
       private static void InitFsm()
       {
         var transitions = new Dictionary<int, Transitions>();
-        transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 2), new SingleTransition(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
-        transitions.Add(2, new Transitions(new SingleTransition(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
-        transitions.Add(4, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 4)));
-        transitions.Add(5, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 5)));
+        transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Documentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 2), new SingleTransition(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
+        transitions.Add(2, new Transitions(new SingleTransition(XName.Get("DefiningQuery", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
+        transitions.Add(4, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 4)));
+        transitions.Add(5, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 5)));
         _validationStates = new FSM(1, new Set<int>(new[]
                                                      {
                                                        2, 1, 4, 5

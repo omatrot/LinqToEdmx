@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   /// <summary>
   /// <para>
@@ -23,7 +23,7 @@ namespace LinqToEdmx.Model.StorageV2
     static Documentation()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl")), new NamedContentModelEntity(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl")), new NamedContentModelEntity(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl")));
     }
 
     /// <summary>
@@ -38,12 +38,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return ((Text) (x));
       }
       set
       {
-        SetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -59,12 +59,12 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        var x = GetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+        var x = GetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         return ((Text) (x));
       }
       set
       {
-        SetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value);
+        SetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), value);
       }
     }
 
@@ -82,7 +82,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 
@@ -121,8 +121,8 @@ namespace LinqToEdmx.Model.StorageV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Text));
-      LocalElementDictionary.Add(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Text));
+      LocalElementDictionary.Add(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Text));
+      LocalElementDictionary.Add(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Text));
     }
   }
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV3
 {
   /// <summary>
   /// <para>
@@ -39,7 +39,7 @@ namespace LinqToEdmx.Model.ConceptualV2
       {
         if ((_propertyField == null))
         {
-          _propertyField = new XTypedList<Property>(this, LinqToXsdTypeManager.Instance, XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"));
+          _propertyField = new XTypedList<Property>(this, LinqToXsdTypeManager.Instance, XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"));
         }
         return _propertyField;
       }
@@ -53,7 +53,7 @@ namespace LinqToEdmx.Model.ConceptualV2
         {
           if ((_propertyField == null))
           {
-            _propertyField = XTypedList<Property>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"));
+            _propertyField = XTypedList<Property>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"));
           }
           else
           {
@@ -90,7 +90,7 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        return XName.Get("TRowType", "http://schemas.microsoft.com/ado/2008/09/edm");
+        return XName.Get("TRowType", "http://schemas.microsoft.com/ado/2009/11/edm");
       }
     }
 
@@ -129,15 +129,15 @@ namespace LinqToEdmx.Model.ConceptualV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Property));
+      LocalElementDictionary.Add(XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (Property));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 3)));
-      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 3)));
-      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2008/09/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2008/09/edm"), 3)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 3)));
+      transitions.Add(2, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 3)));
+      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("Property", "http://schemas.microsoft.com/ado/2009/11/edm"), 2), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm"), 3)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      2, 1, 3

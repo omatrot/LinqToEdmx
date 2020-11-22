@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -20,7 +20,7 @@ namespace LinqToEdmx.DesignerV2
     static Connection()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2009/11/edmx")));
     }
 
     /// <summary>
@@ -35,11 +35,11 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return ((DesignerInfoPropertySet) GetElement(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+        return ((DesignerInfoPropertySet) GetElement(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2009/11/edmx")));
       }
       set
       {
-        SetElement(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2008/10/edmx"), value);
+        SetElement(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2009/11/edmx"), value);
       }
     }
 
@@ -57,7 +57,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TConnection", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TConnection", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -96,7 +96,7 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (DesignerInfoPropertySet));
+      LocalElementDictionary.Add(XName.Get("DesignerInfoPropertySet", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (DesignerInfoPropertySet));
     }
   }
 }

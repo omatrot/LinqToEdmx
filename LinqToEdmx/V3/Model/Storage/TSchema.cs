@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   /// <summary>
   /// <para>
@@ -48,7 +48,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_associationField == null))
         {
-          _associationField = new XTypedList<Association>(this, LinqToXsdTypeManager.Instance, XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _associationField = new XTypedList<Association>(this, LinqToXsdTypeManager.Instance, XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _associationField;
       }
@@ -62,7 +62,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_associationField == null))
           {
-            _associationField = XTypedList<Association>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _associationField = XTypedList<Association>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -89,7 +89,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_entityTypeField == null))
         {
-          _entityTypeField = new XTypedList<EntityTypeStore>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _entityTypeField = new XTypedList<EntityTypeStore>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _entityTypeField;
       }
@@ -103,7 +103,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_entityTypeField == null))
           {
-            _entityTypeField = XTypedList<EntityTypeStore>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _entityTypeField = XTypedList<EntityTypeStore>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -130,7 +130,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_entityContainerField == null))
         {
-          _entityContainerField = new XTypedList<EntityContainer>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _entityContainerField = new XTypedList<EntityContainer>(this, LinqToXsdTypeManager.Instance, XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _entityContainerField;
       }
@@ -144,7 +144,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_entityContainerField == null))
           {
-            _entityContainerField = XTypedList<EntityContainer>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _entityContainerField = XTypedList<EntityContainer>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -171,7 +171,7 @@ namespace LinqToEdmx.Model.StorageV2
       {
         if ((_functionField == null))
         {
-          _functionField = new XTypedList<Function>(this, LinqToXsdTypeManager.Instance, XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+          _functionField = new XTypedList<Function>(this, LinqToXsdTypeManager.Instance, XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
         }
         return _functionField;
       }
@@ -185,7 +185,7 @@ namespace LinqToEdmx.Model.StorageV2
         {
           if ((_functionField == null))
           {
-            _functionField = XTypedList<Function>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"));
+            _functionField = XTypedList<Function>.Initialize(this, LinqToXsdTypeManager.Instance, value, XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"));
           }
           else
           {
@@ -294,7 +294,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("TSchema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("TSchema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 
@@ -333,20 +333,20 @@ namespace LinqToEdmx.Model.StorageV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Association));
-      LocalElementDictionary.Add(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EntityTypeStore));
-      LocalElementDictionary.Add(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EntityContainer));
-      LocalElementDictionary.Add(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Function));
+      LocalElementDictionary.Add(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Association));
+      LocalElementDictionary.Add(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (EntityTypeStore));
+      LocalElementDictionary.Add(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (EntityContainer));
+      LocalElementDictionary.Add(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), typeof (Function));
     }
 
     private static void InitFsm()
     {
       var transitions = new Dictionary<int, Transitions>();
-      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 9)));
-      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 9)));
-      transitions.Add(7, new Transitions(new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 7), new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 3), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 6), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 9)));
-      transitions.Add(6, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 6)));
-      transitions.Add(9, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), 9)));
+      transitions.Add(1, new Transitions(new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 9)));
+      transitions.Add(3, new Transitions(new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 9)));
+      transitions.Add(7, new Transitions(new SingleTransition(XName.Get("Function", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 7), new SingleTransition(XName.Get("Association", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 1), new SingleTransition(XName.Get("EntityType", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 3), new SingleTransition(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 6), new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 9)));
+      transitions.Add(6, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 6)));
+      transitions.Add(9, new Transitions(new SingleTransition(new WildCard("##other", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl"), 9)));
       _validationStates = new FSM(1, new Set<int>(new[]
                                                    {
                                                      1, 3, 6, 7, 9

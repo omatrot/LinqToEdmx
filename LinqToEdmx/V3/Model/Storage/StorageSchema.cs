@@ -5,7 +5,7 @@ using System.Xml;
 using System.Xml.Linq;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   public class StorageSchema : XTypedElement, IXMetaData
   {
@@ -238,7 +238,7 @@ namespace LinqToEdmx.Model.StorageV2
     {
       get
       {
-        return XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl");
+        return XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/11/edm/ssdl");
       }
     }
 

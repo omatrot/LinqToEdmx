@@ -1,7 +1,7 @@
 ﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV3
 {
   public static class IsFixedLengthFacet
   {

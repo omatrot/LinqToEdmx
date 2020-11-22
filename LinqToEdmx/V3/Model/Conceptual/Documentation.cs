@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV3
 {
   /// <summary>
   /// <para>
@@ -23,7 +23,7 @@ namespace LinqToEdmx.Model.ConceptualV2
     static Documentation()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Summary", "http://schemas.microsoft.com/ado/2008/09/edm")), new NamedContentModelEntity(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2008/09/edm")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm")), new NamedContentModelEntity(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm")));
     }
 
     /// <summary>
@@ -38,12 +38,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((Text) (x));
       }
       set
       {
-        SetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -59,12 +59,12 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        var x = GetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2008/09/edm"));
+        var x = GetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm"));
         return ((Text) (x));
       }
       set
       {
-        SetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2008/09/edm"), value);
+        SetElement(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm"), value);
       }
     }
 
@@ -82,7 +82,7 @@ namespace LinqToEdmx.Model.ConceptualV2
     {
       get
       {
-        return XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2008/09/edm");
+        return XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2009/11/edm");
       }
     }
 
@@ -121,8 +121,8 @@ namespace LinqToEdmx.Model.ConceptualV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("Summary", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Text));
-      LocalElementDictionary.Add(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Text));
+      LocalElementDictionary.Add(XName.Get("Summary", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (Text));
+      LocalElementDictionary.Add(XName.Get("LongDescription", "http://schemas.microsoft.com/ado/2009/11/edm"), typeof (Text));
     }
   }
 }

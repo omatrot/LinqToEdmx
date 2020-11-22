@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.DesignerV2
+namespace LinqToEdmx.DesignerV3
 {
   /// <summary>
   /// <para>
@@ -32,11 +32,11 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return ((StorageModels) GetElement(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+        return ((StorageModels) GetElement(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2009/11/edmx")));
       }
       set
       {
-        SetElement(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2008/10/edmx"), value);
+        SetElement(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2009/11/edmx"), value);
       }
     }
 
@@ -52,11 +52,11 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return ((ConceptualModels) GetElement(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+        return ((ConceptualModels) GetElement(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2009/11/edmx")));
       }
       set
       {
-        SetElement(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2008/10/edmx"), value);
+        SetElement(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2009/11/edmx"), value);
       }
     }
 
@@ -72,11 +72,11 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return ((Mappings) GetElement(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2008/10/edmx")));
+        return ((Mappings) GetElement(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2009/11/edmx")));
       }
       set
       {
-        SetElement(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2008/10/edmx"), value);
+        SetElement(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2009/11/edmx"), value);
       }
     }
 
@@ -94,7 +94,7 @@ namespace LinqToEdmx.DesignerV2
     {
       get
       {
-        return XName.Get("TRuntime", "http://schemas.microsoft.com/ado/2008/10/edmx");
+        return XName.Get("TRuntime", "http://schemas.microsoft.com/ado/2009/11/edmx");
       }
     }
 
@@ -133,9 +133,9 @@ namespace LinqToEdmx.DesignerV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (StorageModels));
-      LocalElementDictionary.Add(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (ConceptualModels));
-      LocalElementDictionary.Add(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Mappings));
+      LocalElementDictionary.Add(XName.Get("StorageModels", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (StorageModels));
+      LocalElementDictionary.Add(XName.Get("ConceptualModels", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (ConceptualModels));
+      LocalElementDictionary.Add(XName.Get("Mappings", "http://schemas.microsoft.com/ado/2009/11/edmx"), typeof (Mappings));
     }
   }
 }

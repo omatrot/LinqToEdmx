@@ -1,7 +1,7 @@
 ﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV3
 {
   public static class ConcurrencyMode
   {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -32,11 +32,11 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return ((EntityTypeModificationFunction) GetElement(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+        return ((EntityTypeModificationFunction) GetElement(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
       }
       set
       {
-        SetElement(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), value);
+        SetElement(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), value);
       }
     }
 
@@ -52,11 +52,11 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return ((EntityTypeModificationFunctionWithResult) GetElement(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+        return ((EntityTypeModificationFunctionWithResult) GetElement(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
       }
       set
       {
-        SetElement(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), value);
+        SetElement(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), value);
       }
     }
 
@@ -72,11 +72,11 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return ((EntityTypeModificationFunctionWithResult) GetElement(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+        return ((EntityTypeModificationFunctionWithResult) GetElement(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
       }
       set
       {
-        SetElement(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), value);
+        SetElement(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), value);
       }
     }
 
@@ -94,7 +94,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TEntityTypeModificationFunctionMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TEntityTypeModificationFunctionMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -133,9 +133,9 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (EntityTypeModificationFunction));
-      LocalElementDictionary.Add(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (EntityTypeModificationFunctionWithResult));
-      LocalElementDictionary.Add(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (EntityTypeModificationFunctionWithResult));
+      LocalElementDictionary.Add(XName.Get("DeleteFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (EntityTypeModificationFunction));
+      LocalElementDictionary.Add(XName.Get("InsertFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (EntityTypeModificationFunctionWithResult));
+      LocalElementDictionary.Add(XName.Get("UpdateFunction", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (EntityTypeModificationFunctionWithResult));
     }
   }
 }

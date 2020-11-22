@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.StorageV2;
+using LinqToEdmx.Model.StorageV3;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.MapV2
+namespace LinqToEdmx.MapV3
 {
   /// <summary>
   /// <para>
@@ -21,7 +21,7 @@ namespace LinqToEdmx.MapV2
     static FunctionImportMapping()
     {
       BuildElementDictionary();
-      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+      ContentModel = new SequenceContentModelEntity(new NamedContentModelEntity(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
     }
 
     /// <summary>
@@ -36,11 +36,11 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return ((FunctionImportMappingResultMapping) GetElement(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs")));
+        return ((FunctionImportMappingResultMapping) GetElement(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs")));
       }
       set
       {
-        SetElement(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), value);
+        SetElement(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), value);
       }
     }
 
@@ -92,7 +92,7 @@ namespace LinqToEdmx.MapV2
     {
       get
       {
-        return XName.Get("TFunctionImportMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs");
+        return XName.Get("TFunctionImportMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs");
       }
     }
 
@@ -131,7 +131,7 @@ namespace LinqToEdmx.MapV2
 
     private static void BuildElementDictionary()
     {
-      LocalElementDictionary.Add(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (FunctionImportMappingResultMapping));
+      LocalElementDictionary.Add(XName.Get("ResultMapping", "http://schemas.microsoft.com/ado/2009/11/mapping/cs"), typeof (FunctionImportMappingResultMapping));
     }
   }
 }
