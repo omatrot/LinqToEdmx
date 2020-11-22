@@ -1,7 +1,7 @@
 ﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Map
+namespace LinqToEdmxV2.MapV2
 {
   public static class Space
   {

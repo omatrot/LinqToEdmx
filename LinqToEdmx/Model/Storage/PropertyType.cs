@@ -1,7 +1,7 @@
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Storage
+namespace LinqToEdmxV2.Model.StorageV2
 {
   public static class PropertyType
   {

@@ -1,10 +1,10 @@
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.Map;
+using LinqToEdmxV2.MapV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Storage
+namespace LinqToEdmxV2.Model.StorageV2
 {
   public class XRoot
   {
@@ -28,13 +28,13 @@ namespace LinqToEdmx.Model.Storage
       _rootObject = root;
     }
 
-    public XRoot(Conceptual.EntityContainer root)
+    public XRoot(ConceptualV2.EntityContainer root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
     }
 
-    public XRoot(Conceptual.ConceptualSchema root)
+    public XRoot(ConceptualV2.ConceptualSchema root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
@@ -68,19 +68,19 @@ namespace LinqToEdmx.Model.Storage
       }
     }
 
-    public Conceptual.EntityContainer EntityContainer1
+    public ConceptualV2.EntityContainer EntityContainer1
     {
       get
       {
-        return _rootObject as Conceptual.EntityContainer;
+        return _rootObject as ConceptualV2.EntityContainer;
       }
     }
 
-    public Conceptual.ConceptualSchema Schema1
+    public ConceptualV2.ConceptualSchema Schema1
     {
       get
       {
-        return _rootObject as Conceptual.ConceptualSchema;
+        return _rootObject as ConceptualV2.ConceptualSchema;
       }
     }
 

@@ -1,10 +1,10 @@
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2.Model.StorageV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Conceptual
+namespace LinqToEdmxV2.Model.ConceptualV2
 {
   public class XRootNamespace
   {

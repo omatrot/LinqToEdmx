@@ -1,7 +1,7 @@
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Conceptual
+namespace LinqToEdmxV2.Model.ConceptualV2
 {
   public static class ScaleFacet
   {

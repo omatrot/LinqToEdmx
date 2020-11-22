@@ -5,7 +5,7 @@ using System.Xml.Linq;
 using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Storage
+namespace LinqToEdmxV2.Model.StorageV2
 {
   /// <summary>
   /// <para>
@@ -68,7 +68,7 @@ namespace LinqToEdmx.Model.Storage
       }
       set
       {
-        SetElementWithValidation(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value, "CommandText", Storage.CommandText.TypeDefinition);
+        SetElementWithValidation(XName.Get("CommandText", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), value, "CommandText", StorageV2.CommandText.TypeDefinition);
       }
     }
 

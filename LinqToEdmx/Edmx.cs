@@ -5,15 +5,15 @@ using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.Common;
-using LinqToEdmx.Designer;
-using LinqToEdmx.Map;
-using LinqToEdmx.Model.Conceptual;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2.Common;
+using LinqToEdmxV2.DesignerV2;
+using LinqToEdmxV2.MapV2;
+using LinqToEdmxV2.Model.ConceptualV2;
+using LinqToEdmxV2.Model.StorageV2;
 using Microsoft.FSharp.Collections;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx
+namespace LinqToEdmxV2
 {
     public class Edmx : XTypedElement, IXMetaData
     {
@@ -97,7 +97,7 @@ namespace LinqToEdmx
         /// Regular expression: (((Designer?)?, (Runtime? | DataServices?))|((Runtime? | DataServices?), (Designer?)?))
         /// </para>
         /// </summary>
-        public IList<Designer.Designer> Designers
+        public IList<DesignerV2.Designer> Designers
         {
             get
             {

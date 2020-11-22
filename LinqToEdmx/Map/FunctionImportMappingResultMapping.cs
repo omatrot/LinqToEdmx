@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2.Model.StorageV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Map
+namespace LinqToEdmxV2.MapV2
 {
   /// <summary>
   /// <para>

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using LinqToEdmx.Model.Conceptual;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2.Model.ConceptualV2;
+using LinqToEdmxV2.Model.StorageV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Designer
+namespace LinqToEdmxV2.DesignerV2
 {
   /// <summary>
   /// <para>

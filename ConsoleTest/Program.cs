@@ -1,8 +1,8 @@
 ﻿using System;
-using LinqToEdmx;
-using LinqToEdmx.Map;
-using LinqToEdmx.Model.Conceptual;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2;
+using LinqToEdmxV2.MapV2;
+using LinqToEdmxV2.Model.ConceptualV2;
+using LinqToEdmxV2.Model.StorageV2;
 
 Console.WriteLine("Hello World!");
 

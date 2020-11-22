@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Model.Storage;
+using LinqToEdmxV2.Model.StorageV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Designer
+namespace LinqToEdmxV2.DesignerV2
 {
   /// <summary>
   /// <para>
