@@ -1,12 +1,12 @@
 ﻿using System;
-using LinqToEdmxV2;
+using LinqToEdmx;
 using LinqToEdmx.MapV2;
 using LinqToEdmx.Model.ConceptualV2;
 using LinqToEdmx.Model.StorageV2;
 
 Console.WriteLine("Hello World!");
 
-var edmx = Edmx.Load(@"/Users/omatrot/Downloads/CommonModel/CommonModel.edmx");
+var edmx = EdmxV2.Load(@"/Users/omatrot/Downloads/CommonModel/CommonModel.edmx");
 
 var entityTypes = edmx.GetItems<EntityType>();
 

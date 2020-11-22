@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using LinqToEdmx.Designer;
-using LinqToEdmx.Map;
-using LinqToEdmx.Model.Conceptual;
+using LinqToEdmx.DesignerV2;
+using LinqToEdmx.MapV2;
+using LinqToEdmx.Model.ConceptualV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmx.Model.Storage
+namespace LinqToEdmx.Model.StorageV2
 {
   public class LinqToXsdTypeManager : ILinqToXsdTypeManager
   {
@@ -85,7 +85,7 @@ namespace LinqToEdmx.Model.Storage
     private static void BuildTypeDictionary()
     {
       TypeDictionary.Add(XName.Get("TEdmx", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (TEdmx));
-      TypeDictionary.Add(XName.Get("TDesigner", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Designer.Designer));
+      TypeDictionary.Add(XName.Get("TDesigner", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (DesignerV2.Designer));
       TypeDictionary.Add(XName.Get("TOptions", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Options));
       TypeDictionary.Add(XName.Get("TDiagrams", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Diagrams));
       TypeDictionary.Add(XName.Get("TConnection", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Connection));
@@ -115,18 +115,18 @@ namespace LinqToEdmx.Model.Storage
       TypeDictionary.Add(XName.Get("TEntityProperty", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EntityProperty));
       TypeDictionary.Add(XName.Get("TFunction", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Function));
       TypeDictionary.Add(XName.Get("TParameter", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (Parameter));
-      TypeDictionary.Add(XName.Get("TSchema", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.TSchema));
-      TypeDictionary.Add(XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.Documentation));
-      TypeDictionary.Add(XName.Get("TText", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.Text));
+      TypeDictionary.Add(XName.Get("TSchema", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.TSchema));
+      TypeDictionary.Add(XName.Get("TDocumentation", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.Documentation));
+      TypeDictionary.Add(XName.Get("TText", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.Text));
       TypeDictionary.Add(XName.Get("TXmlOrText", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (XmlOrText));
       TypeDictionary.Add(XName.Get("TUsing", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Using));
-      TypeDictionary.Add(XName.Get("TAssociation", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.Association));
+      TypeDictionary.Add(XName.Get("TAssociation", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.Association));
       TypeDictionary.Add(XName.Get("TComplexType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ComplexType));
-      TypeDictionary.Add(XName.Get("TConstraint", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.Constraint));
-      TypeDictionary.Add(XName.Get("TReferentialConstraintRoleElement", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.ReferentialConstraintRoleElement));
+      TypeDictionary.Add(XName.Get("TConstraint", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.Constraint));
+      TypeDictionary.Add(XName.Get("TReferentialConstraintRoleElement", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.ReferentialConstraintRoleElement));
       TypeDictionary.Add(XName.Get("TNavigationProperty", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (NavigationProperty));
-      TypeDictionary.Add(XName.Get("TEntityType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.EntityType));
-      TypeDictionary.Add(XName.Get("TFunction", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.Function));
+      TypeDictionary.Add(XName.Get("TEntityType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.EntityType));
+      TypeDictionary.Add(XName.Get("TFunction", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.Function));
       TypeDictionary.Add(XName.Get("TFunctionParameter", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (FunctionParameter));
       TypeDictionary.Add(XName.Get("TCollectionType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (TCollectionType));
       TypeDictionary.Add(XName.Get("TTypeRef", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (TypeRef));
@@ -134,11 +134,11 @@ namespace LinqToEdmx.Model.Storage
       TypeDictionary.Add(XName.Get("TRowType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (RowType));
       TypeDictionary.Add(XName.Get("TProperty", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Property));
       TypeDictionary.Add(XName.Get("TFunctionReturnType", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (FunctionReturnType));
-      TypeDictionary.Add(XName.Get("TEntityKeyElement", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.EntityKeyElement));
-      TypeDictionary.Add(XName.Get("TPropertyRef", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.PropertyRef));
-      TypeDictionary.Add(XName.Get("TAssociationEnd", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.AssociationEnd));
-      TypeDictionary.Add(XName.Get("TOnAction", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.OnAction));
-      TypeDictionary.Add(XName.Get("TEntityProperty", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.EntityProperty));
+      TypeDictionary.Add(XName.Get("TEntityKeyElement", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.EntityKeyElement));
+      TypeDictionary.Add(XName.Get("TPropertyRef", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.PropertyRef));
+      TypeDictionary.Add(XName.Get("TAssociationEnd", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.AssociationEnd));
+      TypeDictionary.Add(XName.Get("TOnAction", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.OnAction));
+      TypeDictionary.Add(XName.Get("TEntityProperty", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.EntityProperty));
       TypeDictionary.Add(XName.Get("TComplexTypeProperty", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ComplexTypeProperty));
       TypeDictionary.Add(XName.Get("TFunctionImportParameter", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (FunctionImportParameter));
       TypeDictionary.Add(XName.Get("TMapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (TMapping));
@@ -174,18 +174,18 @@ namespace LinqToEdmx.Model.Storage
     private static void BuildElementDictionary()
     {
       ElementDictionary.Add(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (EntityContainer));
-      ElementDictionary.Add(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.EntityContainer));
-      ElementDictionary.Add(XName.Get("Edmx", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (Edmx));
+      ElementDictionary.Add(XName.Get("EntityContainer", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.EntityContainer));
+      ElementDictionary.Add(XName.Get("Edmx", "http://schemas.microsoft.com/ado/2008/10/edmx"), typeof (EdmxV2));
       ElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2009/02/edm/ssdl"), typeof (StorageSchema));
-      ElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (Conceptual.ConceptualSchema));
+      ElementDictionary.Add(XName.Get("Schema", "http://schemas.microsoft.com/ado/2008/09/edm"), typeof (ConceptualV2.ConceptualSchema));
       ElementDictionary.Add(XName.Get("Mapping", "http://schemas.microsoft.com/ado/2008/09/mapping/cs"), typeof (Mapping));
     }
 
     private static void BuildWrapperDictionary()
     {
-      WrapperDictionary.Add(typeof (Edmx), typeof (TEdmx));
+      WrapperDictionary.Add(typeof (EdmxV2), typeof (TEdmx));
       WrapperDictionary.Add(typeof (StorageSchema), typeof (TSchema));
-      WrapperDictionary.Add(typeof (Conceptual.ConceptualSchema), typeof (Conceptual.TSchema));
+      WrapperDictionary.Add(typeof (ConceptualV2.ConceptualSchema), typeof (ConceptualV2.TSchema));
       WrapperDictionary.Add(typeof (Mapping), typeof (TMapping));
     }
 
