@@ -1,4 +1,4 @@
-using System.Xml.Schema;
+﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
 namespace LinqToEdmx.CodeGen
