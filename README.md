@@ -8,4 +8,8 @@ The main problem right now is that LinqToEdmx has been concieved only for versio
 
 Utimately, I would it to work with all 3 versions of the edmx format.
 
-There is absolutely no clue about the way the code has been generated in the codeplex archive (no doc, no comment in generated files). Using XSD? Who knows...
+There is absolutely no clue about the way the code has been generated in the codeplex archive (no doc, no comment in generated files). Using XSD? Linq2Xsd? Who knows...
+
+Right now I've decided to duplicate the exitsing code and fix namespaces to be able to work with V2 & V3 schema explicitely...
+
+But... even in V2, I could'nt enumerate properly over entities without errors.
