@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmx.CommonV2;
+using LinqToEdmx.Common;
 using LinqToEdmx.DesignerV2;
 using LinqToEdmx.MapV2;
 using LinqToEdmx.Model.ConceptualV2;

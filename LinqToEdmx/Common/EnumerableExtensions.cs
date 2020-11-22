@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace LinqToEdmx.CommonV2
+namespace LinqToEdmx.Common
 {
   public static class EnumerableExtensions
   {
