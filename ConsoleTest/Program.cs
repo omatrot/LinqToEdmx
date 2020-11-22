@@ -1,17 +1,33 @@
 ﻿using System;
-using LinqToEdmx;
-using LinqToEdmx.MapV2;
-using LinqToEdmx.Model.ConceptualV2;
-using LinqToEdmx.Model.StorageV2;
+
 
 Console.WriteLine("Hello World!");
 
-var edmx = EdmxV2.Load(@"/Users/omatrot/Downloads/CommonModel/CommonModel.edmx");
+var edmxV2 = LinqToEdmx.EdmxV2.Load(@"/Users/omatrot/Downloads/linqtoedmx/sourceCode\sourceCode/Src/Test/Northwind.edmx");
 
-var entityTypes = edmx.GetItems<EntityType>();
+var entityTypesv2 = edmxV2.GetItems<LinqToEdmx.Model.ConceptualV2.EntityType>();
 
-var entityTypeStores = edmx.GetItems<EntityTypeStore>();
+foreach (var entity in entityTypesv2)
+{
+    Console.WriteLine(entity.Name);
+}
 
-var entityTypeMappings = edmx.GetItems<EntityTypeMapping>();
+var edmxV3 = LinqToEdmx.EdmxV3.Load(@"/Users/omatrot/Downloads/CommonModel/CommonModel.edmx");
+
+var entityTypes = edmxV3.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
+
+foreach (var entity in entityTypes)
+{
+    Console.WriteLine(entity.Name);
+}
+
+var entityTypeStores = edmxV3.GetItems<LinqToEdmx.Model.StorageV3.EntityTypeStore>();
+
+foreach(var entityTypeStore in entityTypeStores)
+{
+    Console.WriteLine(entityTypeStore.Name);
+}
+
+var entityTypeMappings = edmxV3.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
 
 Console.ReadKey();

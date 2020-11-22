@@ -196,13 +196,6 @@ namespace LinqToEdmx
             get
             {
                 return XName.Get("Edmx", "http://schemas.microsoft.com/ado/2009/11/edmx");
-                //return Content.Version switch
-                //{
-                //    "3.0" => XName.Get("Edmx", "http://schemas.microsoft.com/ado/2009/11/edmx"),
-                //    "2.0" => XName.Get("Edmx", "http://schemas.microsoft.com/ado/2009/11/edmx"),
-                //    _ => throw new InvalidOperationException(@"Versions is yet unknown /!\")
-                //};
-
             }
         }
 
