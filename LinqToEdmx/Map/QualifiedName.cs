@@ -1,7 +1,7 @@
 ﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.MapV2
+namespace LinqToEdmx.MapV2
 {
   public static class QualifiedName
   {

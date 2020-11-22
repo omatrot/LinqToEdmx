@@ -1,10 +1,10 @@
-using System.IO;
+﻿using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmxV2.MapV2;
+using LinqToEdmx.MapV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV2
 {
   public class XRoot
   {
@@ -40,7 +40,7 @@ namespace LinqToEdmxV2.Model.StorageV2
       _rootObject = root;
     }
 
-    public XRoot(Edmx root)
+    public XRoot(EdmxV2 root)
     {
       _xDocument = new XDocument(root.Untyped);
       _rootObject = root;
@@ -84,11 +84,11 @@ namespace LinqToEdmxV2.Model.StorageV2
       }
     }
 
-    public Edmx Edmx
+    public EdmxV2 Edmx
     {
       get
       {
-        return _rootObject as Edmx;
+        return _rootObject as EdmxV2;
       }
     }
 

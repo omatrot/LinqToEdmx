@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml.Linq;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV2
 {
   /// <summary>
   /// <para>

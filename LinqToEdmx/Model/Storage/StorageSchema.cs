@@ -1,11 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.Model.StorageV2
+namespace LinqToEdmx.Model.StorageV2
 {
   public class StorageSchema : XTypedElement, IXMetaData
   {

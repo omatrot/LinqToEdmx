@@ -1,7 +1,7 @@
-using System.Xml.Schema;
+﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.Model.ConceptualV2
+namespace LinqToEdmx.Model.ConceptualV2
 {
   public static class EdmSimpleType
   {

@@ -1,7 +1,7 @@
-using System.Xml.Schema;
+﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.SchemaGenV2
+namespace LinqToEdmx.SchemaGenV2
 {
   public static class SourceType
   {

@@ -1,7 +1,7 @@
-using System.Xml.Schema;
+﻿using System.Xml.Schema;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.CodeGen
+namespace LinqToEdmx.CodeGen
 {
   public static class PublicOrInternalAccess
   {

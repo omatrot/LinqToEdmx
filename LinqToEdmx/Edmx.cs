@@ -1,21 +1,21 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmxV2.Common;
-using LinqToEdmxV2.DesignerV2;
-using LinqToEdmxV2.MapV2;
-using LinqToEdmxV2.Model.ConceptualV2;
-using LinqToEdmxV2.Model.StorageV2;
+using LinqToEdmx.CommonV2;
+using LinqToEdmx.DesignerV2;
+using LinqToEdmx.MapV2;
+using LinqToEdmx.Model.ConceptualV2;
+using LinqToEdmx.Model.StorageV2;
 using Microsoft.FSharp.Collections;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2
+namespace LinqToEdmx
 {
-    public class Edmx : XTypedElement, IXMetaData
+    public class EdmxV2 : XTypedElement, IXMetaData
     {
         private static readonly string ConceptualModelNamespace = typeof(ConceptualSchema).Namespace;
         private static readonly string StorageModelNamespace = typeof(StorageSchema).Namespace;
@@ -23,18 +23,18 @@ namespace LinqToEdmxV2
         private const string ResourceSchemeString = @"res://";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Edmx"/> class.
+        /// Initializes a new instance of the <see cref="EdmxV2"/> class.
         /// </summary>
-        public Edmx()
+        public EdmxV2()
         {
             SetInnerType(new TEdmx());
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Edmx"/> class.
+        /// Initializes a new instance of the <see cref="EdmxV2"/> class.
         /// </summary>
         /// <param name="content">The content.</param>
-        public Edmx(TEdmx content)
+        public EdmxV2(TEdmx content)
         {
             SetInnerType(content);
         }
@@ -229,9 +229,9 @@ namespace LinqToEdmxV2
 
         #endregion
 
-        public static explicit operator Edmx(XElement xe)
+        public static explicit operator EdmxV2(XElement xe)
         {
-            return XTypedServices.ToXTypedElement<Edmx, TEdmx>(xe, LinqToXsdTypeManager.Instance);
+            return XTypedServices.ToXTypedElement<EdmxV2, TEdmx>(xe, LinqToXsdTypeManager.Instance);
         }
 
         public void Save(string xmlFile)
@@ -256,12 +256,12 @@ namespace LinqToEdmxV2
         /// A pipe-delimited list of directories, files, and resource locations in which to look for metadata and mapping information.
         /// Blank spaces on each side of the pipe separator are ignored.
         /// </param>
-        /// <returns>An <see cref="Edmx"/> instance loaded with metadata from the <paramref name="path"/>.</returns>
+        /// <returns>An <see cref="EdmxV2"/> instance loaded with metadata from the <paramref name="path"/>.</returns>
         /// <remarks>
         /// The path to the workspace metadata follows the same rules as paths for embedded resources in the Entity Data Model connection string. 
         /// See <see cref="http://msdn.microsoft.com/en-us/library/cc716756(VS.100).aspx">Connection Strings (Entity Framework)</see> for more information.
         /// </remarks>
-        public static Edmx Load(string path)
+        public static EdmxV2 Load(string path)
         {
             return SplitPath(path).Aggregate(BuildEmptyEdmx(), Load);
         }
@@ -274,12 +274,12 @@ namespace LinqToEdmxV2
         }
 
         /// <summary>
-        /// Loads metadata and mapping information from the given path into an <see cref="Edmx"/> instance.
+        /// Loads metadata and mapping information from the given path into an <see cref="EdmxV2"/> instance.
         /// </summary>
-        /// <param name="edmx">The <see cref="Edmx"/> instance in which to load metadata from the given path.</param>
+        /// <param name="edmx">The <see cref="EdmxV2"/> instance in which to load metadata from the given path.</param>
         /// <param name="splitPath">An non-delimited, i.e. split, path from which to load metadata.</param>
         /// <returns>An edmx instance loaded with metadata from the given <paramref name="splitPath"/>.</returns>
-        private static Edmx Load(Edmx edmx, string splitPath)
+        private static EdmxV2 Load(EdmxV2 edmx, string splitPath)
         {
             if (splitPath.StartsWith(ResourceSchemeString))
             {
@@ -303,18 +303,18 @@ namespace LinqToEdmxV2
             }
             if (MapToMetadataFileType(splitPath) == MetadataFileType.Edmx)
             {
-                return XTypedServices.Load<Edmx, TEdmx>(splitPath, LinqToXsdTypeManager.Instance);
+                return XTypedServices.Load<EdmxV2, TEdmx>(splitPath, LinqToXsdTypeManager.Instance);
             }
             throw new ArgumentException(String.Format("The path argument '{0}' must represent a path to an edmx, csdl, ssdl or msl file.", splitPath));
         }
 
-        private static Edmx LoadFromEmbeddedResource(Edmx edmx, string splitPath)
+        private static EdmxV2 LoadFromEmbeddedResource(EdmxV2 edmx, string splitPath)
         {
             return GetStreamsFromResourcePath(splitPath)
               .Aggregate(edmx, (edmxResult, fileNameAndStream) => Load(edmxResult, MapToMetadataFileType(fileNameAndStream.Key).Value, fileNameAndStream.Value));
         }
 
-        private static Edmx Load(Edmx edmx, MetadataFileType fileType, Stream metadataStream)
+        private static EdmxV2 Load(EdmxV2 edmx, MetadataFileType fileType, Stream metadataStream)
         {
             switch (fileType)
             {
@@ -334,11 +334,11 @@ namespace LinqToEdmxV2
             }
         }
 
-        public static Edmx Load(Stream xmlStream)
+        public static EdmxV2 Load(Stream xmlStream)
         {
             using (xmlStream)
             {
-                return XTypedServices.Load<Edmx, TEdmx>(xmlStream, LinqToXsdTypeManager.Instance);
+                return XTypedServices.Load<EdmxV2, TEdmx>(xmlStream, LinqToXsdTypeManager.Instance);
             }
         }
 
@@ -471,10 +471,10 @@ namespace LinqToEdmxV2
         }
 
         /// <summary>
-        /// Builds an empty <see cref="Edmx"/> instance in which to load metadata content.
+        /// Builds an empty <see cref="EdmxV2"/> instance in which to load metadata content.
         /// </summary>
         /// <returns></returns>
-        private static Edmx BuildEmptyEdmx()
+        private static EdmxV2 BuildEmptyEdmx()
         {
             var runtime = new Runtime
             {
@@ -490,17 +490,17 @@ namespace LinqToEdmxV2
                                                            }
             };
 
-            return new Edmx(tedmx);
+            return new EdmxV2(tedmx);
         }
 
-        public static Edmx Parse(string xml)
+        public static EdmxV2 Parse(string xml)
         {
-            return XTypedServices.Parse<Edmx, TEdmx>(xml, LinqToXsdTypeManager.Instance);
+            return XTypedServices.Parse<EdmxV2, TEdmx>(xml, LinqToXsdTypeManager.Instance);
         }
 
         public override XTypedElement Clone()
         {
-            return new Edmx(((TEdmx)(Content.Clone())));
+            return new EdmxV2(((TEdmx)(Content.Clone())));
         }
 
         private void SetInnerType(TEdmx contentField)

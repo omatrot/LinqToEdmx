@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
-using LinqToEdmxV2.Model.StorageV2;
+using LinqToEdmx.Model.StorageV2;
 using Xml.Schema.Linq;
 
-namespace LinqToEdmxV2.MapV2
+namespace LinqToEdmx.MapV2
 {
   public class Mapping : XTypedElement, IXMetaData
   {

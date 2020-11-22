@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace LinqToEdmxV2.Common
+namespace LinqToEdmx.CommonV2
 {
   public static class EnumerableExtensions
   {
