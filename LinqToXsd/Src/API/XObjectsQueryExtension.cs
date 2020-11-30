@@ -53,14 +53,16 @@ namespace Xml.Schema.Linq {
                 bool validContent = true;
 
                 foreach(XElement childElement in parentElement.Elements()) {
+
                     bool isTypeT = IsAnnoatedElemTypeOf<T>(childElement, out childObject);
                     
-                    if (fsm != null) {//Always execute FSM no matter whether we find an element of type T
-                       currentState = FsmMakeTransition(currentState, childElement.Name, out matchingName, out matchingWildCard);
-                       if (currentState == FSM.InvalidState) {
+                    if (isTypeT && fsm != null) {//Do not execute FSM if we do not find an element of type T
+                        currentState = FsmMakeTransition(currentState, childElement.Name, out matchingName, out matchingWildCard);
+                        if (currentState == FSM.InvalidState)
+                        {
                             validContent = false;
                             break;
-                       }
+                        }
                     }
 
                     if (!isTypeT) {//check dictionary
