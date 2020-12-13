@@ -1,18 +1,18 @@
 ﻿using System;
-
+using System.Linq;
 
 Console.WriteLine("Hello World!");
 
-var edmxV2 = LinqToEdmx.EdmxV2.Load(@"/Users/omatrot/Downloads/linqtoedmx/sourceCode\sourceCode/Src/Test/Northwind.edmx");
+//var edmxV2 = LinqToEdmx.EdmxV2.Load(@"/Users/omatrot/Downloads/linqtoedmx/sourceCode/Src/Test/Northwind.edmx");
 
-var entityTypesv2 = edmxV2.GetItems<LinqToEdmx.Model.ConceptualV2.EntityType>();
+//var entityTypesv2 = edmxV2.GetItems<LinqToEdmx.Model.ConceptualV2.EntityType>();
 
-foreach (var entity in entityTypesv2)
-{
-    Console.WriteLine(entity.Name);
-}
+//foreach (var entity in entityTypesv2)
+//{
+//    Console.WriteLine(entity.Name);
+//}
 
-var edmxV3 = LinqToEdmx.EdmxV3.Load(@"/Users/omatrot/Downloads/CommonModel/CommonModel.edmx");
+var edmxV3 = LinqToEdmx.EdmxV3.Load(@"../../../AventureWorks2019.edmx");
 
 var entityTypes = edmxV3.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
 
@@ -29,5 +29,7 @@ foreach(var entityTypeStore in entityTypeStores)
 }
 
 var entityTypeMappings = edmxV3.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
+
+Console.WriteLine(entityTypeMappings.Count());
 
 Console.ReadKey();
