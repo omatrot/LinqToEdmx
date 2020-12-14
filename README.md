@@ -13,3 +13,10 @@ There is absolutely no clue about the way the code has been generated in the cod
 Right now I've decided to duplicate the existing code and tweak namespaces to be able to work with V2 & V3 edmx files explicitely...
 
 **Now fixed**: But... even in V2, I could'nt enumerate properly over entities without errors... Which seems to indicate that the project actualy never worked properly on CodePlex :(
+
+Nugets:
+
+https://www.nuget.org/packages/linq2xsd/0.0.1-pre
+
+https://www.nuget.org/packages/linq2edmx/0.0.1-pre
+
