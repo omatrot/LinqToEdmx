@@ -2,13 +2,24 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>linq2xsd</PackageId>
+    <PackageVersion>0.0.1-pre</PackageVersion>
+    <Authors>Olivier MATROT &amp; Originals Codeplex Authors</Authors>
+    <PackageLicenseUrl>https://github.com/omatrot/LinqToEdmx/blob/master/LICENSE</PackageLicenseUrl>
+    <Owners>Olivier MATROT &amp; Originals Codeplex Authors</Owners>
+    <PackageProjectUrl>https://github.com/omatrot/LinqToEdmx</PackageProjectUrl>
+    <PackageReleaseNotes>First nuget release</PackageReleaseNotes>
+    <Title>linq2xsd</Title>
+    <Description>This project is a still work in progress port of LinqToXsd to .NET standard 2.1.</Description>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="5.0.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.1">
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.5-dev.10" />
   </ItemGroup>
 </Project>
