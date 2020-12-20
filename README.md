@@ -12,7 +12,7 @@ I have absolutely no clue about the way the code has been generated in the codep
 
 Right now I've decided to duplicate the existing code and tweak namespaces to be able to work with V2 & V3 edmx files explicitely...
 
-**Now fixed**: <strike>But... even in V2, I could'nt enumerate properly over entities without errors... Which seems to indicate that the project actually never worked properly on CodePlex :(</strike>
+**Now fixed**: <strike>But... even in V2, I couldn't enumerate properly over entities without errors... Which seems to indicate that the project actually never worked properly on CodePlex :(</strike>
 
 Nuget packages:
 
