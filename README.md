@@ -16,7 +16,7 @@ Right now I've decided to duplicate the existing code and tweak namespaces to be
 
 Nuget packages:
 
-https://www.nuget.org/packages/linq2xsd/0.0.1-pre
+https://www.nuget.org/packages/linq2xsd/0.0.2-pre
 
-https://www.nuget.org/packages/linq2edmx/0.0.1-pre
+https://www.nuget.org/packages/linq2edmx/0.0.2-pre
 
