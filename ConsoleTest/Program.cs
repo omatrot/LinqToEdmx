@@ -12,24 +12,44 @@ Console.WriteLine("Hello World!");
 //    Console.WriteLine(entity.Name);
 //}
 
-var edmxV3 = LinqToEdmx.EdmxV3.Load(@"../../../AventureWorks2019.edmx");
+var edmxV3SqlServer = LinqToEdmx.EdmxV3.Load(@"../../../AventureWorks2019.edmx");
 
-var entityTypes = edmxV3.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
+var entityTypesSqlServer = edmxV3SqlServer.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
 
-foreach (var entity in entityTypes)
+foreach (var entity in entityTypesSqlServer)
 {
     Console.WriteLine(entity.Name);
 }
 
-var entityTypeStores = edmxV3.GetItems<LinqToEdmx.Model.StorageV3.EntityTypeStore>();
+var entityTypeStoresSqlServer = edmxV3SqlServer.GetItems<LinqToEdmx.Model.StorageV3.EntityTypeStore>();
 
-foreach(var entityTypeStore in entityTypeStores)
+foreach(var entityTypeStore in entityTypeStoresSqlServer)
 {
     Console.WriteLine(entityTypeStore.Name);
 }
 
-var entityTypeMappings = edmxV3.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
+var entityTypeMappingsSqlServer = edmxV3SqlServer.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
 
-Console.WriteLine(entityTypeMappings.Count());
+Console.WriteLine(entityTypeMappingsSqlServer.Count());
+
+var edmxV3PostgreSQL = LinqToEdmx.EdmxV3.Load(@"../../../Airlines.edmx");
+
+var entityTypesPostgreSQL = edmxV3PostgreSQL.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
+
+foreach (var entity in entityTypesPostgreSQL)
+{
+    Console.WriteLine(entity.Name);
+}
+
+var entityTypeStoresPostgreSQL = edmxV3PostgreSQL.GetItems<LinqToEdmx.Model.StorageV3.EntityTypeStore>();
+
+foreach (var entityTypeStore in entityTypeStoresPostgreSQL)
+{
+    Console.WriteLine(entityTypeStore.Name);
+}
+
+var entityTypeMappingsPostgreSQL = edmxV3PostgreSQL.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
+
+Console.WriteLine(entityTypeMappingsPostgreSQL.Count());
 
 Console.ReadKey();
