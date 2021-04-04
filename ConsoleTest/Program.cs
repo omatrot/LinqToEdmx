@@ -52,4 +52,25 @@ var entityTypeMappingsPostgreSQL = edmxV3PostgreSQL.GetItems<LinqToEdmx.MapV3.En
 
 Console.WriteLine(entityTypeMappingsPostgreSQL.Count());
 
+
+var edmxV3FireBird = LinqToEdmx.EdmxV3.Load(@"../../../Examples.edmx");
+
+var entityTypesFireBird = edmxV3FireBird.GetItems<LinqToEdmx.Model.ConceptualV3.EntityType>();
+
+foreach (var entity in entityTypesFireBird)
+{
+    Console.WriteLine(entity.Name);
+}
+
+var entityTypeStoresFireBird = edmxV3FireBird.GetItems<LinqToEdmx.Model.StorageV3.EntityTypeStore>();
+
+foreach (var entityTypeStore in entityTypeStoresFireBird)
+{
+    Console.WriteLine(entityTypeStore.Name);
+}
+
+var entityTypeMappingsFireBird = edmxV3FireBird.GetItems<LinqToEdmx.MapV3.EntityTypeMapping>();
+
+Console.WriteLine(entityTypeMappingsFireBird.Count());
+
 Console.ReadKey();
